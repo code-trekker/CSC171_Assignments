@@ -4,7 +4,15 @@ beat(A, B) :- position(A) < position(B).
 beat(garry, barry).
 beat(larry, barry).
 
+beat(contestant(_, _, _, red), contestant(_, _, _, blue)).
+beat(contestant(_, larry, _, _), contestant(_, _, _, yellow)).
+
 beat(X, Y) :- (X \= garry -> red(X), blue(Y); blue(Y)).
+
+contestant(2, _, 3, green).
+contestant(1, _, 2, _).
+contestant(4, harry, 4, _).
+contestant(3, barry, _, yellow).
 
 red(X) :- write(X), write(" wears red."), nl.
 blue(X) :- write(X), write(" wears blue."), nl.

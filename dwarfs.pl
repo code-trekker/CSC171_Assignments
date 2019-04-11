@@ -45,9 +45,9 @@ inFrontOf(doc, happy).
 start(_) :- 
 	order([bashful, droopy, dopey, doc, happy, sneezy, smelly, sleepy, stumpy], [grumpy]).
 
-order([d|x], O) :- write("order is: "), write(O), nl.
+order([d|[]], O) :- write("order is: "), write(O), nl.
 
-order([d|OT], [F|x]) :- 
+order([d|OT], [F|[]]) :- 
 	(front(d, F) -> order(OT, [d, F]) ; order([OT], [F, d])).
 
 order([d|OT], [F|R]) :-

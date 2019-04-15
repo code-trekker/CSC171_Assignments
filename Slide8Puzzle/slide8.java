@@ -680,7 +680,7 @@ public class slide8 {
 				in_node.setText("1000");
 				sprd_node.setText("0");
 
-				text_dis.setText("GOAL >>>>>");
+				text_dis.setText("");
 
 				btn_0.setText("");
 				btn_1.setText("1");

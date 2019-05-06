@@ -28,6 +28,7 @@ public class slide8 {
 
 	private int node = 1000;
 	Mem[] mem = new Mem[0];
+	Mem[] mem1 = new Mem[0];
 
 	private int[] nxt = new int[1000];
 	private int far;
@@ -315,9 +316,9 @@ public class slide8 {
 				dot_bfs.setSelected(false);
 			}
 		});
-		// dot_astar.setFont(new Font("Rockwell", Font.BOLD, 30));
-		// dot_astar.setBounds(429, 292, 100, 47);
-		// frmpuzzleSolveIt.getContentPane().add(dot_astar);
+		dot_astar.setFont(new Font("Rockwell", Font.BOLD, 30));
+		dot_astar.setBounds(429, 292, 100, 47);
+		frmpuzzleSolveIt.getContentPane().add(dot_astar);
 
 		// buttons for customizing the goal state
 
@@ -360,6 +361,24 @@ public class slide8 {
 		button.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button);
 
+		abutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				String temp = abutton.getText();
+
+				if (button_1.getText().equals("")) {
+					abutton.setText(button_1.getText());
+					button_1.setText(temp);
+				} else if (button_3.getText().equals("")) {
+					abutton.setText(button_3.getText());
+					button_3.setText(temp);
+				}
+			}
+		});
+		abutton.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton.setBounds(736, 13, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton);
+
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -382,6 +401,27 @@ public class slide8 {
 		button_1.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_1);
 
+		abutton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_1.getText();
+
+				if (button.getText().equals("")) {
+					abutton_1.setText(button.getText());
+					button.setText(temp);
+				} else if (button_2.getText().equals("")) {
+					abutton_1.setText(button_2.getText());
+					button_2.setText(temp);
+				} else if (button_4.getText().equals("")) {
+					abutton_1.setText(button_4.getText());
+					button_4.setText(temp);
+				}
+			}
+		});
+		abutton_1.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_1.setBounds(848, 13, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_1);
+
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -400,6 +440,24 @@ public class slide8 {
 		button_2.setBounds(960, 13, 100, 100);
 		button_2.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_2);
+
+		abutton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				String temp = abutton_2.getText();
+
+				if (button_1.getText().equals("")) {
+					abutton_2.setText(button_1.getText());
+					button_1.setText(temp);
+				} else if (button_5.getText().equals("")) {
+					abutton_2.setText(button_5.getText());
+					button_5.setText(temp);
+				}
+			}
+		});
+		abutton_2.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_2.setBounds(960, 13, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_2);
 
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -422,6 +480,27 @@ public class slide8 {
 		button_3.setBounds(736, 126, 100, 100);
 		button_3.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_3);
+
+		abutton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_3.getText();
+
+				if (button.getText().equals("")) {
+					abutton_3.setText(button.getText());
+					button.setText(temp);
+				} else if (button_6.getText().equals("")) {
+					abutton_3.setText(button_6.getText());
+					button_6.setText(temp);
+				} else if (button_4.getText().equals("")) {
+					abutton_3.setText(button_4.getText());
+					button_4.setText(temp);
+				}
+			}
+		});
+		abutton_3.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_3.setBounds(736, 126, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_3);
 
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -448,6 +527,30 @@ public class slide8 {
 		button_4.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_4);
 
+		abutton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_4.getText();
+
+				if (button_1.getText().equals("")) {
+					abutton_4.setText(button_1.getText());
+					button_1.setText(temp);
+				} else if (button_3.getText().equals("")) {
+					abutton_4.setText(button_3.getText());
+					button_3.setText(temp);
+				} else if (button_5.getText().equals("")) {
+					abutton_4.setText(button_5.getText());
+					button_5.setText(temp);
+				} else if (button_7.getText().equals("")) {
+					abutton_4.setText(button_7.getText());
+					button_7.setText(temp);
+				}
+			}
+		});
+		abutton_4.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_4.setBounds(848, 126, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_4);
+
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -470,6 +573,27 @@ public class slide8 {
 		button_5.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_5);
 
+		abutton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_5.getText();
+
+				if (button_8.getText().equals("")) {
+					abutton_5.setText(button_8.getText());
+					button_8.setText(temp);
+				} else if (button_2.getText().equals("")) {
+					abutton_5.setText(button_2.getText());
+					button_2.setText(temp);
+				} else if (button_4.getText().equals("")) {
+					abutton_5.setText(button_4.getText());
+					button_4.setText(temp);
+				}
+			}
+		});
+		abutton_5.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_5.setBounds(960, 126, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_5);
+
 		button_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -488,6 +612,24 @@ public class slide8 {
 		button_6.setBounds(736, 239, 100, 100);
 		button_6.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_6);
+
+		abutton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_6.getText();
+
+				if (button_3.getText().equals("")) {
+					abutton_6.setText(button_3.getText());
+					button_3.setText(temp);
+				} else if (button_7.getText().equals("")) {
+					abutton_6.setText(button_7.getText());
+					button_7.setText(temp);
+				}
+			}
+		});
+		abutton_6.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_6.setBounds(736, 239, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_6);
 
 		button_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -511,6 +653,27 @@ public class slide8 {
 		button_7.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_7);
 
+		abutton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				String temp = abutton_7.getText();
+
+				if (button_8.getText().equals("")) {
+					abutton_7.setText(button_8.getText());
+					button_8.setText(temp);
+				} else if (button_6.getText().equals("")) {
+					abutton_7.setText(button_6.getText());
+					button_6.setText(temp);
+				} else if (button_4.getText().equals("")) {
+					abutton_7.setText(button_4.getText());
+					button_4.setText(temp);
+				}
+			}
+		});
+		abutton_7.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_7.setBounds(848, 239, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_7);
+
 		button_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -529,6 +692,24 @@ public class slide8 {
 		button_8.setBounds(960, 239, 100, 100);
 		button_8.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_8);
+
+		abutton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String temp = abutton_8.getText();
+
+				if (button_5.getText().equals("")) {
+					abutton_8.setText(button_5.getText());
+					button_5.setText(temp);
+				} else if (button_7.getText().equals("")) {
+					abutton_8.setText(button_7.getText());
+					button_7.setText(temp);
+				}
+			}
+		});
+		abutton_8.setFont(new Font("Rockwell", Font.BOLD, 50));
+		abutton_8.setBounds(960, 239, 100, 100);
+		frmpuzzleSolveIt.getContentPane().add(abutton_8);
 
 		JButton btn_start = new JButton("Start");// ----------------------------------------------------------------------------------------------------------START
 		JButton btn_shuffle = new JButton("Shuffle");
@@ -559,6 +740,16 @@ public class slide8 {
 				btn_7.setText(mylist.get(7));
 				btn_8.setText(mylist.get(8));
 
+				abutton.setText(mylist.get(0));
+				abutton_1.setText(mylist.get(1));
+				abutton_2.setText(mylist.get(2));
+				abutton_3.setText(mylist.get(3));
+				abutton_4.setText(mylist.get(4));
+				abutton_5.setText(mylist.get(5));
+				abutton_6.setText(mylist.get(6));
+				abutton_7.setText(mylist.get(7));
+				abutton_8.setText(mylist.get(8));
+
 			}
 		});
 
@@ -583,6 +774,7 @@ public class slide8 {
 				}
 
 				mem = new Mem[node];
+				mem1 = new Mem[node];
 
 				String[] a_pre = { button.getText(), button_1.getText(), button_2.getText(), button_3.getText(),
 						button_4.getText(), button_5.getText(), button_6.getText(), button_7.getText(),
@@ -591,6 +783,7 @@ public class slide8 {
 				for (int i = 0; i < answer.length; i++) {
 					if (a_pre[i].equals("")) {
 						answer[i] = 0;
+						System.out.println("hello test");
 					} else
 						answer[i] = Integer.valueOf(a_pre[i]);
 				}
@@ -606,9 +799,14 @@ public class slide8 {
 				}
 
 				int lst_mem = 0;
+				int lst_mem1 = 0;
 				mem[lst_mem] = new Mem();
+				mem1[lst_mem1] = new Mem();
 				mem[lst_mem].save(quest, 0);
+				mem1[lst_mem1].save(quest, 0);
+				
 				int to_sprd = lst_mem;
+				int to_sprd1 = lst_mem1;
 
 				while (!chk.isCorrect(answer, mem[to_sprd].getMem()) && lst_mem < node) {
 					for (int j = 0; j < 4; j++)// ---------------------------------------------------------------------------------------------------------------Spread

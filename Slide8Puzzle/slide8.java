@@ -61,7 +61,7 @@ public class slide8 {
 	private void initialize() {
 		frmpuzzleSolveIt = new JFrame();
 		frmpuzzleSolveIt.setTitle("8 Slide Puzzle");
-		frmpuzzleSolveIt.setBounds(100, 100, 740, 482);
+		frmpuzzleSolveIt.setBounds(100, 100, 1480, 465);
 		frmpuzzleSolveIt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmpuzzleSolveIt.getContentPane().setLayout(null);
 
@@ -331,6 +331,16 @@ public class slide8 {
 		JButton button_7 = new JButton("7");
 		JButton button_8 = new JButton("8");
 
+		JButton abutton = new JButton("");
+		JButton abutton_1 = new JButton("1");
+		JButton abutton_2 = new JButton("2");
+		JButton abutton_3 = new JButton("3");
+		JButton abutton_4 = new JButton("4");
+		JButton abutton_5 = new JButton("5");
+		JButton abutton_6 = new JButton("6");
+		JButton abutton_7 = new JButton("7");
+		JButton abutton_8 = new JButton("8");
+
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -347,6 +357,7 @@ public class slide8 {
 		});
 		button.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button.setBounds(736, 13, 100, 100);
+		button.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button);
 
 		button_1.addActionListener(new ActionListener() {
@@ -368,6 +379,7 @@ public class slide8 {
 		});
 		button_1.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_1.setBounds(848, 13, 100, 100);
+		button_1.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_1);
 
 		button_2.addActionListener(new ActionListener() {
@@ -386,6 +398,7 @@ public class slide8 {
 		});
 		button_2.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_2.setBounds(960, 13, 100, 100);
+		button_2.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_2);
 
 		button_3.addActionListener(new ActionListener() {
@@ -407,6 +420,7 @@ public class slide8 {
 		});
 		button_3.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_3.setBounds(736, 126, 100, 100);
+		button_3.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_3);
 
 		button_4.addActionListener(new ActionListener() {
@@ -431,6 +445,7 @@ public class slide8 {
 		});
 		button_4.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_4.setBounds(848, 126, 100, 100);
+		button_4.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_4);
 
 		button_5.addActionListener(new ActionListener() {
@@ -452,6 +467,7 @@ public class slide8 {
 		});
 		button_5.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_5.setBounds(960, 126, 100, 100);
+		button_5.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_5);
 
 		button_6.addActionListener(new ActionListener() {
@@ -470,6 +486,7 @@ public class slide8 {
 		});
 		button_6.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_6.setBounds(736, 239, 100, 100);
+		button_6.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_6);
 
 		button_7.addActionListener(new ActionListener() {
@@ -491,6 +508,7 @@ public class slide8 {
 		});
 		button_7.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_7.setBounds(848, 239, 100, 100);
+		button_7.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_7);
 
 		button_8.addActionListener(new ActionListener() {
@@ -509,6 +527,7 @@ public class slide8 {
 		});
 		button_8.setFont(new Font("Rockwell", Font.BOLD, 50));
 		button_8.setBounds(960, 239, 100, 100);
+		button_8.setVisible(false);
 		frmpuzzleSolveIt.getContentPane().add(button_8);
 
 		JButton btn_start = new JButton("Start");// ----------------------------------------------------------------------------------------------------------START

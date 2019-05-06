@@ -61,7 +61,7 @@ public class slide8 {
 	private void initialize() {
 		frmpuzzleSolveIt = new JFrame();
 		frmpuzzleSolveIt.setTitle("8 Slide Puzzle");
-		frmpuzzleSolveIt.setBounds(100, 100, 1480, 465);
+		frmpuzzleSolveIt.setBounds(100, 100, 740, 465);
 		frmpuzzleSolveIt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmpuzzleSolveIt.getContentPane().setLayout(null);
 

@@ -23,15 +23,22 @@ public class slide8 {
 	private JTextField in_node;
 
 	private CheckAnswer chk = new CheckAnswer();
+	private CheckAnswer chk1 = new CheckAnswer();
 	private Compare cmpr = new Compare();
+	private Compare cmpr1 = new Compare();
 	private SwapLaw sw = new SwapLaw();
+	private SwapLaw sw1 = new SwapLaw();
 
 	private int node = 1000;
+	private int node1 = 1000;
+
 	Mem[] mem = new Mem[0];
 	Mem[] mem1 = new Mem[0];
 
 	private int[] nxt = new int[1000];
+	private int[] nxt1 = new int[1000];
 	private int far;
+	private int far1;
 
 	/**
 	 * Launch the application.
@@ -62,7 +69,7 @@ public class slide8 {
 	private void initialize() {
 		frmpuzzleSolveIt = new JFrame();
 		frmpuzzleSolveIt.setTitle("8 Slide Puzzle");
-		frmpuzzleSolveIt.setBounds(100, 100, 1480, 465);
+		frmpuzzleSolveIt.setBounds(90, 100, 1480, 465);
 		frmpuzzleSolveIt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmpuzzleSolveIt.getContentPane().setLayout(null);
 
@@ -77,10 +84,13 @@ public class slide8 {
 		JButton btn_8 = new JButton("8");
 		JButton btn_reset = new JButton("Reset");
 		JLabel finish_dis = new JLabel("");
+		JLabel finish_dis1 = new JLabel("");
 		JButton btn_roll = new JButton("Solve");
+		JButton btn_roll1 = new JButton("Solve");
 		JRadioButton dot_astar = new JRadioButton("A*");
 		JRadioButton dot_bfs = new JRadioButton("BFS");
 		Timer timer = new Timer();
+		Timer timer1 = new Timer();
 
 		btn_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -294,12 +304,23 @@ public class slide8 {
 		scrollPane.setBounds(542, 13, 182, 326);
 		frmpuzzleSolveIt.getContentPane().add(scrollPane);
 
+		JScrollPane scrollPane1 = new JScrollPane();
+		scrollPane1.setBounds(1080, 13, 182, 326);
+		frmpuzzleSolveIt.getContentPane().add(scrollPane1);
+
 		JTextPane text_dis = new JTextPane();
 		text_dis.setFont(new Font("Rockwell", Font.PLAIN, 25));
 		text_dis.setText("test");
 		text_dis.setEditable(false);
 		text_dis.setText("");
 		scrollPane.setViewportView(text_dis);
+
+		JTextPane text_dis1 = new JTextPane();
+		text_dis1.setFont(new Font("Rockwell", Font.PLAIN, 25));
+		text_dis1.setText("test");
+		text_dis1.setEditable(false);
+		text_dis1.setText("");
+		scrollPane1.setViewportView(text_dis1);
 
 		dot_bfs.setSelected(true);
 		dot_bfs.addActionListener(new ActionListener() {
@@ -309,16 +330,17 @@ public class slide8 {
 		});
 		dot_bfs.setFont(new Font("Rockwell", Font.BOLD, 30));
 		dot_bfs.setBounds(429, 239, 101, 48);
-		// frmpuzzleSolveIt.getContentPane().add(dot_bfs);
+		dot_bfs.setVisible(false);
+		frmpuzzleSolveIt.getContentPane().add(dot_bfs);
 
 		dot_astar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dot_bfs.setSelected(false);
 			}
 		});
-		dot_astar.setFont(new Font("Rockwell", Font.BOLD, 30));
-		dot_astar.setBounds(429, 292, 100, 47);
-		frmpuzzleSolveIt.getContentPane().add(dot_astar);
+		// dot_astar.setFont(new Font("Rockwell", Font.BOLD, 30));
+		// dot_astar.setBounds(429, 292, 100, 47);
+		// frmpuzzleSolveIt.getContentPane().add(dot_astar);
 
 		// buttons for customizing the goal state
 
@@ -366,12 +388,12 @@ public class slide8 {
 
 				String temp = abutton.getText();
 
-				if (button_1.getText().equals("")) {
-					abutton.setText(button_1.getText());
-					button_1.setText(temp);
-				} else if (button_3.getText().equals("")) {
-					abutton.setText(button_3.getText());
-					button_3.setText(temp);
+				if (abutton_1.getText().equals("")) {
+					abutton.setText(abutton_1.getText());
+					abutton_1.setText(temp);
+				} else if (abutton_3.getText().equals("")) {
+					abutton.setText(abutton_3.getText());
+					abutton_3.setText(temp);
 				}
 			}
 		});
@@ -406,15 +428,15 @@ public class slide8 {
 
 				String temp = abutton_1.getText();
 
-				if (button.getText().equals("")) {
-					abutton_1.setText(button.getText());
-					button.setText(temp);
-				} else if (button_2.getText().equals("")) {
-					abutton_1.setText(button_2.getText());
-					button_2.setText(temp);
-				} else if (button_4.getText().equals("")) {
-					abutton_1.setText(button_4.getText());
-					button_4.setText(temp);
+				if (abutton.getText().equals("")) {
+					abutton_1.setText(abutton.getText());
+					abutton.setText(temp);
+				} else if (abutton_2.getText().equals("")) {
+					abutton_1.setText(abutton_2.getText());
+					abutton_2.setText(temp);
+				} else if (abutton_4.getText().equals("")) {
+					abutton_1.setText(abutton_4.getText());
+					abutton_4.setText(temp);
 				}
 			}
 		});
@@ -446,12 +468,12 @@ public class slide8 {
 
 				String temp = abutton_2.getText();
 
-				if (button_1.getText().equals("")) {
-					abutton_2.setText(button_1.getText());
-					button_1.setText(temp);
-				} else if (button_5.getText().equals("")) {
-					abutton_2.setText(button_5.getText());
-					button_5.setText(temp);
+				if (abutton_1.getText().equals("")) {
+					abutton_2.setText(abutton_1.getText());
+					abutton_1.setText(temp);
+				} else if (abutton_5.getText().equals("")) {
+					abutton_2.setText(abutton_5.getText());
+					abutton_5.setText(temp);
 				}
 			}
 		});
@@ -486,15 +508,15 @@ public class slide8 {
 
 				String temp = abutton_3.getText();
 
-				if (button.getText().equals("")) {
-					abutton_3.setText(button.getText());
-					button.setText(temp);
-				} else if (button_6.getText().equals("")) {
-					abutton_3.setText(button_6.getText());
-					button_6.setText(temp);
-				} else if (button_4.getText().equals("")) {
-					abutton_3.setText(button_4.getText());
-					button_4.setText(temp);
+				if (abutton.getText().equals("")) {
+					abutton_3.setText(abutton.getText());
+					abutton.setText(temp);
+				} else if (abutton_6.getText().equals("")) {
+					abutton_3.setText(abutton_6.getText());
+					abutton_6.setText(temp);
+				} else if (abutton_4.getText().equals("")) {
+					abutton_3.setText(abutton_4.getText());
+					abutton_4.setText(temp);
 				}
 			}
 		});
@@ -532,18 +554,18 @@ public class slide8 {
 
 				String temp = abutton_4.getText();
 
-				if (button_1.getText().equals("")) {
-					abutton_4.setText(button_1.getText());
-					button_1.setText(temp);
-				} else if (button_3.getText().equals("")) {
-					abutton_4.setText(button_3.getText());
-					button_3.setText(temp);
-				} else if (button_5.getText().equals("")) {
-					abutton_4.setText(button_5.getText());
-					button_5.setText(temp);
-				} else if (button_7.getText().equals("")) {
-					abutton_4.setText(button_7.getText());
-					button_7.setText(temp);
+				if (abutton_1.getText().equals("")) {
+					abutton_4.setText(abutton_1.getText());
+					abutton_1.setText(temp);
+				} else if (abutton_3.getText().equals("")) {
+					abutton_4.setText(abutton_3.getText());
+					abutton_3.setText(temp);
+				} else if (abutton_5.getText().equals("")) {
+					abutton_4.setText(abutton_5.getText());
+					abutton_5.setText(temp);
+				} else if (abutton_7.getText().equals("")) {
+					abutton_4.setText(abutton_7.getText());
+					abutton_7.setText(temp);
 				}
 			}
 		});
@@ -578,15 +600,15 @@ public class slide8 {
 
 				String temp = abutton_5.getText();
 
-				if (button_8.getText().equals("")) {
-					abutton_5.setText(button_8.getText());
-					button_8.setText(temp);
-				} else if (button_2.getText().equals("")) {
-					abutton_5.setText(button_2.getText());
-					button_2.setText(temp);
-				} else if (button_4.getText().equals("")) {
-					abutton_5.setText(button_4.getText());
-					button_4.setText(temp);
+				if (abutton_8.getText().equals("")) {
+					abutton_5.setText(abutton_8.getText());
+					abutton_8.setText(temp);
+				} else if (abutton_2.getText().equals("")) {
+					abutton_5.setText(abutton_2.getText());
+					abutton_2.setText(temp);
+				} else if (abutton_4.getText().equals("")) {
+					abutton_5.setText(abutton_4.getText());
+					abutton_4.setText(temp);
 				}
 			}
 		});
@@ -618,12 +640,12 @@ public class slide8 {
 
 				String temp = abutton_6.getText();
 
-				if (button_3.getText().equals("")) {
-					abutton_6.setText(button_3.getText());
-					button_3.setText(temp);
-				} else if (button_7.getText().equals("")) {
-					abutton_6.setText(button_7.getText());
-					button_7.setText(temp);
+				if (abutton_3.getText().equals("")) {
+					abutton_6.setText(abutton_3.getText());
+					abutton_3.setText(temp);
+				} else if (abutton_7.getText().equals("")) {
+					abutton_6.setText(abutton_7.getText());
+					abutton_7.setText(temp);
 				}
 			}
 		});
@@ -658,15 +680,15 @@ public class slide8 {
 
 				String temp = abutton_7.getText();
 
-				if (button_8.getText().equals("")) {
-					abutton_7.setText(button_8.getText());
-					button_8.setText(temp);
-				} else if (button_6.getText().equals("")) {
-					abutton_7.setText(button_6.getText());
-					button_6.setText(temp);
-				} else if (button_4.getText().equals("")) {
-					abutton_7.setText(button_4.getText());
-					button_4.setText(temp);
+				if (abutton_8.getText().equals("")) {
+					abutton_7.setText(abutton_8.getText());
+					abutton_8.setText(temp);
+				} else if (abutton_6.getText().equals("")) {
+					abutton_7.setText(abutton_6.getText());
+					abutton_6.setText(temp);
+				} else if (abutton_4.getText().equals("")) {
+					abutton_7.setText(abutton_4.getText());
+					abutton_4.setText(temp);
 				}
 			}
 		});
@@ -698,12 +720,12 @@ public class slide8 {
 
 				String temp = abutton_8.getText();
 
-				if (button_5.getText().equals("")) {
-					abutton_8.setText(button_5.getText());
-					button_5.setText(temp);
-				} else if (button_7.getText().equals("")) {
-					abutton_8.setText(button_7.getText());
-					button_7.setText(temp);
+				if (abutton_5.getText().equals("")) {
+					abutton_8.setText(abutton_5.getText());
+					abutton_5.setText(temp);
+				} else if (abutton_7.getText().equals("")) {
+					abutton_8.setText(abutton_7.getText());
+					abutton_7.setText(temp);
 				}
 			}
 		});
@@ -712,6 +734,7 @@ public class slide8 {
 		frmpuzzleSolveIt.getContentPane().add(abutton_8);
 
 		JButton btn_start = new JButton("Start");// ----------------------------------------------------------------------------------------------------------START
+		JButton btn_astar = new JButton("Start (A*)");
 		JButton btn_shuffle = new JButton("Shuffle");
 
 		btn_shuffle.addActionListener(new ActionListener() {
@@ -774,7 +797,6 @@ public class slide8 {
 				}
 
 				mem = new Mem[node];
-				mem1 = new Mem[node];
 
 				String[] a_pre = { button.getText(), button_1.getText(), button_2.getText(), button_3.getText(),
 						button_4.getText(), button_5.getText(), button_6.getText(), button_7.getText(),
@@ -783,7 +805,6 @@ public class slide8 {
 				for (int i = 0; i < answer.length; i++) {
 					if (a_pre[i].equals("")) {
 						answer[i] = 0;
-						System.out.println("hello test");
 					} else
 						answer[i] = Integer.valueOf(a_pre[i]);
 				}
@@ -799,14 +820,10 @@ public class slide8 {
 				}
 
 				int lst_mem = 0;
-				int lst_mem1 = 0;
 				mem[lst_mem] = new Mem();
-				mem1[lst_mem1] = new Mem();
 				mem[lst_mem].save(quest, 0);
-				mem1[lst_mem1].save(quest, 0);
-				
+
 				int to_sprd = lst_mem;
-				int to_sprd1 = lst_mem1;
 
 				while (!chk.isCorrect(answer, mem[to_sprd].getMem()) && lst_mem < node) {
 					for (int j = 0; j < 4; j++)// ---------------------------------------------------------------------------------------------------------------Spread
@@ -831,10 +848,11 @@ public class slide8 {
 					} // ------------------------------------------------------------------------------------------------------------------------------------------
 					mem[to_sprd].setOld(true);
 
-					if (dot_bfs.isSelected())
+					if (dot_bfs.isSelected()) {
 						to_sprd = chk.choosePath_BFS(answer, mem, lst_mem);
-					else
+					} else {
 						to_sprd = chk.choosePath_Astar(answer, mem, lst_mem);
+					}
 				}
 
 				dot_bfs.setEnabled(true);
@@ -863,7 +881,7 @@ public class slide8 {
 						public void run() {
 							btn_roll.doClick();
 						}
-					}, 500);
+					}, 100);
 
 				} else {
 					str += "\nFail\n";
@@ -874,6 +892,126 @@ public class slide8 {
 				text_dis.setText(str);
 
 				btn_roll.setEnabled(true);
+				btn_astar.doClick();
+
+			}
+		});
+
+		btn_astar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// dot_astar.setSelected(true);
+
+				dot_bfs.setEnabled(false);
+				dot_astar.setEnabled(false);
+
+				far1 = 0;
+
+				Scanner scan = new Scanner(System.in);
+
+				try {
+					node1 = Integer.valueOf((in_node.getText()));
+				} catch (Exception e) {
+					in_node.setText("1000");
+				}
+				if (node1 < 1000) {
+					node1 = 1000;
+					in_node.setText("1000");
+				}
+
+				mem1 = new Mem[node1];
+
+				String[] a_pre1 = { button.getText(), button_1.getText(), button_2.getText(), button_3.getText(),
+						button_4.getText(), button_5.getText(), button_6.getText(), button_7.getText(),
+						button_8.getText() };
+				int[] answer1 = new int[a_pre1.length];
+				for (int i = 0; i < answer1.length; i++) {
+					if (a_pre1[i].equals("")) {
+						answer1[i] = 0;
+					} else
+						answer1[i] = Integer.valueOf(a_pre1[i]);
+				}
+
+				String[] q_pre1 = { abutton.getText(), abutton_1.getText(), abutton_2.getText(), abutton_3.getText(),
+						abutton_4.getText(), abutton_5.getText(), abutton_6.getText(), abutton_7.getText(),
+						abutton_8.getText() };
+				int[] quest1 = new int[q_pre1.length];
+				for (int i = 0; i < quest1.length; i++) {
+					if (q_pre1[i].equals("")) {
+						quest1[i] = 0;
+						System.out.println(q_pre1[0]);
+					} else
+						quest1[i] = Integer.valueOf(q_pre1[i]);
+				}
+
+				int lst_mem1 = 0;
+				mem1[lst_mem1] = new Mem();
+				mem1[lst_mem1].save(quest1, 0);
+				int to_sprd1 = lst_mem1;
+
+				while (!chk1.isCorrect(answer1, mem1[to_sprd1].getMem()) && lst_mem1 < node1) {
+					for (int j = 0; j < 4; j++)// ---------------------------------------------------------------------------------------------------------------Spread
+					{
+						int[] m_temp1 = new int[mem1[to_sprd1].getMem().length];
+						for (int i = 0; i < m_temp1.length; i++) {
+							m_temp1[i] = mem1[to_sprd1].getMem()[i];
+						}
+						int[] q_temp1 = sw1.spread(m_temp1, j);
+
+						if (!cmpr1.isSame(q_temp1, mem1, lst_mem1)) {
+							lst_mem1++;
+							try {
+								mem1[lst_mem1] = new Mem();
+								sprd_node.setText("" + (lst_mem1 + 1));
+							} catch (Exception e) {
+								System.out.println(e.toString());
+								break;
+							}
+							mem1[lst_mem1].save(q_temp1, to_sprd1);
+						}
+					} // ------------------------------------------------------------------------------------------------------------------------------------------
+					mem1[to_sprd1].setOld(true);
+
+					if (dot_bfs.isSelected()) {
+						to_sprd1 = chk1.choosePath_Astar(answer1, mem1, lst_mem1);
+					}
+				}
+
+				dot_bfs.setEnabled(true);
+				dot_astar.setEnabled(true);
+
+				int c_node1 = to_sprd1;
+				int c1 = 0;
+				String str1 = "";
+
+				while (to_sprd1 != 0) {
+					nxt1[far1] = to_sprd1;
+
+					str1 += "\n" + mem1[to_sprd1].toString() + "\n";
+					to_sprd1 = mem1[to_sprd1].getCameFrom();
+
+					far1++;
+				}
+				str1 += "\n" + mem1[0].toString() + "\n";
+
+				if (chk1.isCorrect(answer1, mem1[c_node1].getMem())) {
+					str1 += "\nCorrect at\nNode : " + c_node1 + "\n" + "Moves :" + far1 + "\n";
+					finish_dis1.setText("");
+					finish_dis1.setForeground(Color.green);
+
+					timer1.schedule(new TimerTask() {
+						public void run() {
+							btn_roll1.doClick();
+						}
+					}, 100);
+
+				} else {
+					str1 += "\nFail\n";
+					finish_dis1.setText("");
+					finish_dis1.setForeground(Color.RED);
+				}
+
+				text_dis1.setText(str1);
 
 			}
 		});
@@ -883,6 +1021,12 @@ public class slide8 {
 		btn_start.setFont(new Font("Rockwell", Font.BOLD, 50));
 		btn_start.setBounds(348, 352, 182, 69);
 		frmpuzzleSolveIt.getContentPane().add(btn_start);
+
+		btn_astar.setForeground(myColor);
+		btn_astar.setFont(new Font("Rockwell", Font.BOLD, 50));
+		btn_astar.setBounds(736, 352, 326, 69);
+		btn_astar.setVisible(false);
+		frmpuzzleSolveIt.getContentPane().add(btn_astar);
 
 		btn_shuffle.setForeground(Color.DARK_GRAY);
 		btn_shuffle.setFont(new Font("Rockwell", Font.BOLD, 40));
@@ -898,6 +1042,7 @@ public class slide8 {
 				sprd_node.setText("0");
 
 				text_dis.setText("");
+				text_dis1.setText("");
 
 				btn_0.setText("");
 				btn_1.setText("1");
@@ -908,6 +1053,16 @@ public class slide8 {
 				btn_6.setText("6");
 				btn_7.setText("7");
 				btn_8.setText("8");
+
+				abutton.setText("");
+				abutton_1.setText("1");
+				abutton_2.setText("2");
+				abutton_3.setText("3");
+				abutton_4.setText("4");
+				abutton_5.setText("5");
+				abutton_6.setText("6");
+				abutton_7.setText("7");
+				abutton_8.setText("8");
 			}
 		});
 		btn_reset.setForeground(Color.RED);
@@ -944,17 +1099,54 @@ public class slide8 {
 						public void run() {
 							btn_roll.doClick();
 						}
-					}, 300);
+					}, 100);
 
 				}
 
 			}
 		});
+
 		// btn_roll.setHorizontalAlignment(SwingConstants.LEFT);
 		btn_roll.setForeground(Color.ORANGE);
 		btn_roll.setVisible(false);
 		btn_roll.setFont(new Font("Rockwell", Font.BOLD, 50));
 		btn_roll.setBounds(348, 268, 182, 69);
 		frmpuzzleSolveIt.getContentPane().add(btn_roll);
+
+		// btn_roll1.setEnabled(false);
+		btn_roll1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				far1--;
+
+				if (far1 >= 0) {
+					int[] m_temp1 = mem1[nxt1[far1]].getMem();
+
+					abutton.setText("" + ((m_temp1[0] == 0) ? "" : m_temp1[0]));
+					abutton_1.setText("" + ((m_temp1[1] == 0) ? "" : m_temp1[1]));
+					abutton_2.setText("" + ((m_temp1[2] == 0) ? "" : m_temp1[2]));
+					abutton_3.setText("" + ((m_temp1[3] == 0) ? "" : m_temp1[3]));
+					abutton_4.setText("" + ((m_temp1[4] == 0) ? "" : m_temp1[4]));
+					abutton_5.setText("" + ((m_temp1[5] == 0) ? "" : m_temp1[5]));
+					abutton_6.setText("" + ((m_temp1[6] == 0) ? "" : m_temp1[6]));
+					abutton_7.setText("" + ((m_temp1[7] == 0) ? "" : m_temp1[7]));
+					abutton_8.setText("" + ((m_temp1[8] == 0) ? "" : m_temp1[8]));
+
+					timer1.schedule(new TimerTask() {
+						@Override
+						public void run() {
+							btn_roll1.doClick();
+						}
+					}, 100);
+
+				}
+
+			}
+		});
+
+		btn_roll1.setForeground(Color.ORANGE);
+		btn_roll1.setVisible(false);
+		btn_roll1.setFont(new Font("Rockwell", Font.BOLD, 50));
+		btn_roll1.setBounds(348, 268, 182, 69);
+		frmpuzzleSolveIt.getContentPane().add(btn_roll1);
 	}
 }

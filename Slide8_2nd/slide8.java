@@ -293,6 +293,18 @@ public class slide8 {
 		lblSpreadedNodes.setBounds(348, 126, 182, 50);
 		frmpuzzleSolveIt.getContentPane().add(lblSpreadedNodes);
 
+		JLabel BFS = new JLabel("<--- BFS");
+		BFS.setForeground(Color.DARK_GRAY);
+		BFS.setFont(new Font("Rockwell", Font.PLAIN, 20));
+		BFS.setBounds(348, 252, 182, 50);
+		frmpuzzleSolveIt.getContentPane().add(BFS);
+
+		JLabel ASTAR = new JLabel("<--- A*");
+		ASTAR.setForeground(Color.DARK_GRAY);
+		ASTAR.setFont(new Font("Rockwell", Font.PLAIN, 20));
+		ASTAR.setBounds(1080, 252, 182, 50);
+		frmpuzzleSolveIt.getContentPane().add(ASTAR);
+
 		JLabel sprd_node = new JLabel("0");
 		sprd_node.setHorizontalAlignment(SwingConstants.RIGHT);
 		sprd_node.setForeground(Color.DARK_GRAY);
@@ -305,7 +317,7 @@ public class slide8 {
 		frmpuzzleSolveIt.getContentPane().add(scrollPane);
 
 		JScrollPane scrollPane1 = new JScrollPane();
-		scrollPane1.setBounds(1080, 13, 182, 326);
+		scrollPane1.setBounds(1200, 13, 182, 326);
 		frmpuzzleSolveIt.getContentPane().add(scrollPane1);
 
 		JTextPane text_dis = new JTextPane();
